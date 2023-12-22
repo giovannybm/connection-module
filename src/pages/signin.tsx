@@ -94,7 +94,7 @@ export default function Signin() {
                 />
               </FormControl>
 
-              <Link href="/">
+              <Link href="/signin">
                 <Typography color="#000" fontWeight={300}>
                   Recuperar mi contraseña
                 </Typography>

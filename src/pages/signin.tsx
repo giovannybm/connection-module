@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
@@ -43,6 +43,35 @@ export default function Signin() {
       display: 'block',
     },
   };
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Función para realizar la solicitud GET
+    const fetchData = async () => {
+      try {
+        // Realiza la solicitud GET a la URL de la API
+        const response = await fetch('https://conection-modules.vercel.app/signin');
+
+        // Verifica si la respuesta es exitosa (código 200)
+        if (!response.ok) {
+          throw new Error('Error al obtener los datos de la API');
+        }
+
+        // Convierte la respuesta a JSON
+        const result = await response.json();
+
+        // Almacena los datos en el estado
+        setData(result);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    // Llama a la función para realizar la solicitud cuando el componente se monta
+    fetchData();
+  }, []);
+
+  console.log(data);
 
   return (
     <Grid container columns={12} sx={{ display: 'flex', minHeight: '100%' }}>

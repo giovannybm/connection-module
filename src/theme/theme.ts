@@ -19,6 +19,13 @@ export const theme = createTheme({
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          overflow: 'hidden',
+        },
+      },
+    },
     MuiContainer: {
       styleOverrides: {
         root: {

@@ -51,7 +51,7 @@ export default function Signin() {
           <Box sx={{ position: 'absolute', zIndex: 1, display: 'flex', alignItems: 'center', height: '100%' }}>
             <Image src={arte} alt="Arte Cliente" />
           </Box>
-          <Image src={bg} alt="Pelcas Cliente" style={{ height: 'inherit', zIndex: -1 }} />
+          <Image src={bg} alt="Pelcas Cliente" style={{ height: 'inherit' }} />
         </Box>
       </Grid>
       <Grid item xs={12} lg={5}>

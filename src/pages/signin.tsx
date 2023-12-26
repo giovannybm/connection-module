@@ -18,7 +18,6 @@ import {
 import bg from '%/images/bg.png';
 import arte from '%/images/arte.png';
 import Link from 'next/link';
-import axios from 'axios';
 
 export default function Signin() {
   const [showPassword, setShowPassword] = useState(false);
@@ -44,24 +43,6 @@ export default function Signin() {
       display: 'block',
     },
   };
-  // Estados para almacenar los datos del formulario
-  const [nombre, setNombre] = useState('');
-  const [correo, setCorreo] = useState('');
-
-  const enviarFormulario = async () => {
-    try {
-      const response = await axios.get('https://conection-modules.vercel.app/signin', {
-        nombre: nombre,
-        correo: correo,
-      });
-
-      console.log(response.data);
-    } catch (error) {
-      console.error('Error al enviar formulario:', error);
-    }
-  };
-
-  enviarFormulario();
 
   return (
     <Grid container columns={12} sx={{ display: 'flex', minHeight: '100%' }}>

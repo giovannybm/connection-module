@@ -50,7 +50,7 @@ export default function Signin() {
 
   const enviarFormulario = async () => {
     try {
-      const response = await axios.post('https://conection-modules.vercel.app/signin', {
+      const response = await axios.get('https://conection-modules.vercel.app/signin', {
         nombre: nombre,
         correo: correo,
       });
